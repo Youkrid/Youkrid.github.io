@@ -3,6 +3,6 @@ The modele will deal with a copper bar with the physics datas like teh density, 
 This is a bar with a length of 80 cm and isolated. 
 For the start, I use the boundarys conditions u(0,t) = u(L,t) = 0 and the initial condition u(x,0) = f(x) with f(x) = 100 sin(\pi * x / 80). 
 
-I have my exact_solution, my boundarys conditions and my initial condition. 
+I found my exact_solution, my boundarys conditions and my initial condition. 
 In a second time, I learn how to use Julia and how to deal with a knew language. I learn about array, Différential equation, ... 
 I will now try to solve the heat equation 1D with Julia. 
