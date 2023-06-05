@@ -15,7 +15,7 @@ end
 
 
 #Exact Function first try just test things 
-function solution(n)
+function exact_solution(n)
 
 #Parameter 
     d= 8.92 #density 
@@ -23,8 +23,8 @@ function solution(n)
     tc= 0.95 #thermal_conductivity
     l= 80 #length
     c = square( tc / (sh * d))
-    #lambda_n = (n * c * pi) / l
+    lambda_n = (n * c * pi) / l
 
  #Define exact solution 
-    u_exact(x) = 100 * sin(pi * x /80)
+    u_exact(x,t) = 100 * sin(pi * x /80) * exp(-lambda_n^2 * t)
 end
