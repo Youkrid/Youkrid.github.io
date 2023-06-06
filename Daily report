@@ -8,3 +8,5 @@ In a second time, I learn how to use Julia and how to deal with a knew language.
 I will now try to solve the heat equation 1D with Julia. 
 
 I use finite differential to modelise the problem, then I transform it to a linear system. Now I have my modele I can translate it into Julia and solve the heat equation in 1d. 
+
+I finish to solve the heat equation, I have to test the error but the courbe is the same taht the exact solution. 
