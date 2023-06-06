@@ -14,6 +14,7 @@ function init()
     plot(space,F)
 end 
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Exact Function first try just test things 
 function exact_solution(n)
@@ -30,6 +31,8 @@ function exact_solution(n)
     u_exact(x,t) = 100 * sin(pi * x /80) * exp(-lambda_n^2 * t)
     return u_exact(x,t)
 end
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function heat(n)
 
@@ -50,23 +53,25 @@ function heat(n)
     U[1] = 0.0
     U[n] = 0.0  
 
-    #inital condition
+    #Inital condition
     for i in 2:n-1
         x = (i-1)*dx
         U[i] = 100.0 * sin((pi / 80)*x)
     end 
 
-    #solve the system
+    #Solve the system
     for j in 1:n_iteration
         Unp1 = copy(U)
-    
         for i in 2:n-1
             Unp1[i] = α * (U[i+1] - 2 * U[i] + U[i-1]) + U[i]
         end 
         U = Unp1
     end 
+    
+    #Plot the solution
     x = [k for k in 0:dx:l]
     plot(x,U)
+    
 end
 
 
