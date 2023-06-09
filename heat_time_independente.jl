@@ -9,7 +9,7 @@ function heat(N)
     tc= 0.95 #thermal_conductivity
     l= 80 #length
     c = ( tc / (sh * d))^(1/2)
-    dx = l/ (N ) #N-1 is the number of points without boundarys
+    dx = l/ (N ) #N is the number of points without boundary so N+2 points in total 
 
 #____________________________Datas are okay maybe dx is the problem for the rest__________________________________________________
 
@@ -56,7 +56,7 @@ end
 
 function exact_solution(N)
     l= 80#length
-    dx = l/ (N) #N-1  is the number of points without boundarys
+    dx = l/ (N) #N is the number of points without boundary so N+2 points in total 
     u_exact = zeros(N+1)
     x = 0
     for i in 1:N+1
@@ -67,6 +67,23 @@ function exact_solution(N)
 end
 
 
+
+function error(N)
+
+    l = 80.0
+    dx = l/ (N)
+    exact = exact_solution(N)
+    modele = heat(N)
+    err = zeros(N+1)
+
+    for i in 1:N+1
+        err[i] = abs(exact[i] - modele[i])
+    end
+    X = [i for i in 0:dx:l]
+    plot(X, err)
+    #print(X)
+    #print(err)
+end
 
 
 
